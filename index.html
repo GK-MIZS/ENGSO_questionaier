@@ -64,9 +64,11 @@
           >
             PRESS for animation {{ test }}
           </button>
-          <h1 ref="toAnimate" class="animate__animated" hidden>
-            {{ test }} An animated element
-          </h1>
+          <div ref="toAnimate" class="animate__animated" hidden>
+            <div class="card p-3 border-3 border-dark shadow">
+                <div class="display-1">{{ test }} An animated element</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
