@@ -20,7 +20,12 @@ document.getElementById("animateBtn").addEventListener("click", function() {
     },
     data() {
       return {
-        test: "HELLO"
+        test: "HELLO",
+        question1: '',
+        question2: '',
+        question3: '',
+        question4: '',
+        Answer1: ''
       };
     },
     methods: {
@@ -31,6 +36,27 @@ document.getElementById("animateBtn").addEventListener("click", function() {
         this.$refs.toAnimate.hidden = false; // show
         void this.$refs.toAnimate.offsetWidth; // Trigger reflow
         this.$refs.toAnimate.classList.add("animate__tada"); // Start animation
+      },
+      select_ansewer(number) {
+        this.$refs.Q1.classList.remove("animate__rubberBand"); // Reset animation
+        void this.$refs.Q1.offsetWidth; // Trigger reflow
+        this.$refs.Q1.classList.add("animate__rubberBand"); // Start animation
+
+//yesNo1
+        if (this.Answer1 == "no") {
+          this.$refs.Y1.hidden = true; // show
+          this.$refs.N1.hidden = false; // show
+        }
+
+        if (this.Answer1 == "yes") {
+          this.$refs.Y1.hidden = false; // show
+          this.$refs.N1.hidden = true; // show
+        }
+
+
+        
+      
+        
       }
     }
   }).mount('#app');

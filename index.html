@@ -1,89 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap demo</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
 
-    <!-- css animate -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 
-    <!-- VUE -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-  </head>
-  <body>
-    <div class="container my-5 text-muted">
-      <button id="animateBtn" class="btn btn-lg btn-outline-dark my-5">
-        PRESS for animation
-      </button>
-      <h1 id="animatedElement" class="animate__animated" hidden>
-        An animated element
-      </h1>
+  <!-- css animate -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!-- VUE -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+
+  <style>
+    /* Style for selected (checked) radio button */
+    .form-check-input:checked {
+      background-color: #f893aa;
+      border-color: #f893aa;
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+
+
+  <div class="container my-5 text-muted" hidden>
+    <button id="animateBtn" class="btn btn-lg btn-outline-dark my-5">
+      PRESS for animation
+    </button>
+    <h1 id="animatedElement" class="animate__animated" hidden>
+      An animated element
+    </h1>
+  </div>
+
+
+  <div style="background-color: #fa6688;">
+
+
+    <div class="d-flex justify-content-center">
+      <img src="Zajeta slika.PNG">
+    </div>
+    <p>&nbsp;</p>
+  </div>
+
+  <div id="app" class="my-5 text-muted">
+
+    <!-- ONE -->
+
+
+
+
+    <div class="container fs-4 mb-5">
+      Listed below are the specified questions designed to assist you in assessing
+      the extent to which the activities you do are in line with the basic elements of
+      good practice on physical activity and youth mental health. The goal of the
+      self-review process is to make sure that you foster a proactive approach to
+      promoting the mental health benefits of the undertaken activities.
     </div>
 
-    <div id="app" class="container my-5 text-muted">
-      <div class="row">
-        <div class="col-6">
-          <div class="form-check" @change="test_animate">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="flexRadioDefault"
-              id="flexRadioDefault1"
-            />
-            <label class="form-check-label" for="flexRadioDefault1">
-              Default radio
-            </label>
-          </div>
-          <div class="form-check" @change="test_animate">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="flexRadioDefault"
-              id="flexRadioDefault2"
-              checked
-            />
-            <label class="form-check-label" for="flexRadioDefault2">
-              Default checked radio
-            </label>
+    <hr class="my-5">
+
+
+
+    <div
+      style="background-color: #fa6688; margin-right: -10vw; margin-left: 20vw; border-top-left-radius: 5rem; border-bottom-left-radius: 5rem; width: 80vw;"
+      class="border-0 p-3 ps-5 mt-5 animate__animated" ref="Q1">
+
+      <div class="d-flex justify-content-start">
+        <div class="display-1 text-white fw-bold">1.</div>
+        <div class="pt-2 px-3 fs-4 text-white fst-italic">
+          <div>Does your physical activity plan follow a structured programme tailored to the needs of
+            adolescents?</div>
+          <div class="d-flex justify-content-start">
+
+
+            <div class="form-check">
+              <input class="form-check-input form-check-input-lg" type="radio" name="yesNo1" id="yesOption1" value="yes"
+                @change="select_ansewer(1)" v-model="Answer1">
+              <label class="form-check-label form-check-label-lg" for="yesOption1">
+                YES
+              </label>
+            </div>
+            <div class="form-check ms-4">
+              <input class="form-check-input form-check-input-lg" type="radio" name="yesNo1" id="noOption1" value="no"
+                @change="select_ansewer(1)" v-model="Answer1">
+              <label class="form-check-label form-check-label-lg" for="noOption1">
+                NO
+              </label>
+
+            </div>
+
           </div>
         </div>
-        <div class="col-6">
-          <button
-            @click="test_animate"
-            class="btn btn-lg btn-outline-dark my-5"
-          >
-            PRESS for animation {{ test }}
-          </button>
-          <div ref="toAnimate" class="animate__animated" hidden>
-            <div class="card p-3 border-3 border-dark shadow">
-                <div class="display-1">{{ test }} An animated element</div>
-            </div>
-          </div>
+
+      </div>
+
+    </div>
+    <div class="container">
+      <div class="border border-0 border-dark p-5 fs-5 animate__animated animate__bounceInRight" hidden ref="N1">
+        <div class="d-flex justify-content-start">
+          <div class="display-1 fw-bold" style="color: #fa6688;">NO</div>
+          <div class="ms-3 fs-6">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+            dolore
+            eu
+            fugiat nulla pariatur. Excepteur sint <b>occaecat cupidatat non proident,</b> sunt in culpa qui officia
+            deserunt
+            mollit
+            anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat."</div>
+        </div>
+
+      </div>
+      <div class="border border-0 border-dark p-5 fs-5 animate__animated animate__bounceInRight" hidden ref="Y1">
+        <div class="d-flex justify-content-start">
+          <div class="display-1 fw-bold" style="color: #fa6688;">YES</div>
+          <div class="ms-3 fs-6">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+            dolore
+            eu
+            fugiat nulla pariatur. Excepteur sint <b>occaecat cupidatat non proident,</b> sunt in culpa qui officia
+            deserunt
+            mollit
+            anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat."</div>
         </div>
       </div>
     </div>
 
-    <script src="questions.js"></script>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    <!-- 2 -->
+
+    <div style="background-color: #f893aa; margin-right: 20vw; margin-left: -10vw; border-top-right-radius: 5rem; border-bottom-right-radius: 5rem; width: 80vw;"
+      class="border-0 p-3 ps-5 mt-5 animate__animated">
+
+      <div class=" d-flex justify-content-end pe-5">
+        <div class="display-1 text-white fw-bold">2.</div>
+        <div></div>
+
+      </div>
+
+    </div>
+
+    <div
+      style="background-color: #fa6688; margin-right: -10vw; margin-left: 20vw; border-top-left-radius: 5rem; border-bottom-left-radius: 5rem; width: 80vw;"
+      class="border-0 p-3 ps-5 mt-5 animate__animated">
+
+      <div class="d-flex justify-content-start">
+        <div class="display-1 text-white fw-bold">3.</div>
+        <div></div>
+
+      </div>
+
+    </div>
+    <!-- 2 -->
+
+    <div style="background-color: #f893aa; margin-right: 20vw; margin-left: -10vw; border-top-right-radius: 5rem; border-bottom-right-radius: 5rem; width: 80vw;"
+      class="border-0 p-3 ps-5 mt-5 animate__animated">
+
+      <div class=" d-flex justify-content-end pe-5">
+        <div class="display-1 text-white fw-bold">4.</div>
+        <div></div>
+
+      </div>
+
+    </div>
+
+    <div
+      style="background-color: #fa6688; margin-right: -10vw; margin-left: 20vw; border-top-left-radius: 5rem; border-bottom-left-radius: 5rem; width: 80vw;"
+      class="border-0 p-3 ps-5 mt-5 animate__animated">
+
+      <div class="d-flex justify-content-start">
+        <div class="display-1 text-white fw-bold">5.</div>
+        <div></div>
+
+      </div>
+
+    </div>
+    <!-- 2 -->
+
+    <div style="background-color: #f893aa; margin-right: 20vw; margin-left: -10vw; border-top-right-radius: 5rem; border-bottom-right-radius: 5rem; width: 80vw;"
+      class="border-0 p-3 ps-5 mt-5 animate__animated">
+
+      <div class=" d-flex justify-content-end pe-5">
+        <div class="display-1 text-white fw-bold">6.</div>
+        <div></div>
+
+      </div>
+
+    </div>
+
+    <div
+      style="background-color: #fa6688; margin-right: -10vw; margin-left: 20vw; border-top-left-radius: 5rem; border-bottom-left-radius: 5rem; width: 80vw;"
+      class="border-0 p-3 ps-5 mt-5 animate__animated">
+
+      <div class="d-flex justify-content-start">
+        <div class="display-1 text-white fw-bold">7.</div>
+        <div></div>
+
+      </div>
+
+    </div>
+    <!-- 2 -->
+
+    <div style="background-color: #f893aa; margin-right: 20vw; margin-left: -10vw; border-top-right-radius: 5rem; border-bottom-right-radius: 5rem; width: 80vw;"
+      class="border-0 p-3 ps-5 mt-5 animate__animated">
+
+      <div class=" d-flex justify-content-end pe-5">
+        <div class="display-1 text-white fw-bold">8.</div>
+        <div></div>
+
+      </div>
+
+    </div>
+
+    <div
+      style="background-color: #fa6688; margin-right: -10vw; margin-left: 20vw; border-top-left-radius: 5rem; border-bottom-left-radius: 5rem; width: 80vw;"
+      class="border-0 p-3 ps-5 mt-5 animate__animated">
+
+      <div class="d-flex justify-content-start">
+        <div class="display-1 text-white fw-bold">9.</div>
+        <div></div>
+
+      </div>
+
+    </div>
+
+    <hr class="my-5">
+
+
+    <div class="mt-5 container">
+
+      <div class="display-6 fw-bold my-5" style="color: #fa6688;">ABOUT THE HOORAY PROJECT:</div>
+      <div>
+        Even before the pandemic, the mental health of young people, particularly teenagers, has been declining. The
+        HOORAY (Youth for Youth’s Mental Health through Physical Activity) project aims to address this challenge by
+        exploring the impact and positive influence physical activity and sport can have on improving the overall
+        well-being and mental health of young people.
+
+      </div>
+      <div class="mt-2">
+        Based on the EU Physical Activity Guidelines, the project team will collect good practices, and develop
+        educational resources and an online knowledge hub for physical education teachers, youth workers, coaches,
+        parents and other personnel working with teens that want to put more attention on mental health and health
+        enhancing physical activity, and prioritize participation and well-being of youth over performance, pressure and
+        results.
+      </div>
+      <div class="mt-2">
+        Those resources and activities will target both, youngsters that are already physically active or enrolled in
+        sport activities, and those who have been inactive and/or dropping of out of sport. Young people will play a key
+        role as we will take a closer look at physical activity through the lens of teenagers and explore how they
+        percieve sport and its impact on their well-being.
+      </div>
+      <div class="mt-2">
+        The HOORAY project started 1st of January 2023 and will continue for 30 months until 30th of June 2025. The
+        kick-off meeting is scheduled for 16th and 17th of February in Munich, Germany.
+      </div>
+
+
+    </div>
+    <p style="background-color: #fa6688;" class="mt-5">&nbsp;</p>
+
+
+    <!-- END -->
+  </div>
+
+  <script src="questions.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
