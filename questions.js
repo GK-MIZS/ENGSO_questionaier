@@ -38,6 +38,8 @@ createApp({
       Answer7: "",
       Answer8: "",
       Answer9: "",
+      big_confeti: true,
+      big_confeti2: true,
       checkboxOptions: [
         "Fun",
         "Joy",
@@ -50,7 +52,15 @@ createApp({
         "Something meaningful one can do for oneself",
         "Personal accomplishment",
       ],
+      checkboxOptions2: [
+        "Foster the creation of a supportive and pressure-free environment.",
+        "Promote social ties and the inclusion of all team members.",
+        "Spend extra time and effort to dialogue with young athletes.",
+        "Commit to achieve the goals of the young athletes.",
+        "Teach the values of healthy competition.",
+      ],
       selectedOptions: [], // Stores the selected checkboxes
+      selectedOptions2: [], // Stores the selected checkboxes
     };
   },
   methods: {
@@ -62,8 +72,6 @@ createApp({
       this.$refs.toAnimate.classList.add("animate__tada"); // Start animation
     },
     select_ansewer(number, r) {
-
-
       // confetti
 
       if (r) {
@@ -119,9 +127,9 @@ createApp({
       }
 
       if (number == 9) {
-        this.$refs.Q9.classList.remove("animate__rubberBand"); // Reset animation
-        void this.$refs.Q9.offsetWidth; // Trigger reflow
-        this.$refs.Q9.classList.add("animate__rubberBand"); // Start animation
+        this.$refs.battery2.classList.remove("animate__rubberBand"); // Reset animation
+        void this.$refs.battery2.offsetWidth; // Trigger reflow
+        this.$refs.battery2.classList.add("animate__rubberBand"); // Start animation
       }
 
       if (number == 10) {
@@ -139,7 +147,6 @@ createApp({
       if (this.Answer1 == "yes") {
         this.$refs.Y1.hidden = false; // show
         this.$refs.N1.hidden = true; // show
-        
       }
 
       if (this.Answer2 == "no") {
@@ -150,7 +157,6 @@ createApp({
       if (this.Answer2 == "yes") {
         this.$refs.Y2.hidden = false; // show
         this.$refs.N2.hidden = true; // show
-        
       }
 
       if (this.Answer3 == "no") {
@@ -161,7 +167,6 @@ createApp({
       if (this.Answer3 == "yes") {
         this.$refs.Y3.hidden = false; // show
         this.$refs.N3.hidden = true; // show
-        
       }
 
       if (this.Answer4 == "no") {
@@ -172,7 +177,6 @@ createApp({
       if (this.Answer4 == "yes") {
         this.$refs.Y4.hidden = false; // show
         this.$refs.N4.hidden = true; // show
-        
       }
 
       if (this.Answer5 == "no") {
@@ -183,7 +187,6 @@ createApp({
       if (this.Answer5 == "yes") {
         this.$refs.Y5.hidden = false; // show
         this.$refs.N5.hidden = true; // show
-        
       }
 
       if (this.Answer6 == "no") {
@@ -194,7 +197,6 @@ createApp({
       if (this.Answer6 == "yes") {
         this.$refs.Y6.hidden = false; // show
         this.$refs.N6.hidden = true; // show
-        
       }
 
       if (this.Answer7 == "no") {
@@ -205,7 +207,6 @@ createApp({
       if (this.Answer7 == "yes") {
         this.$refs.Y7.hidden = false; // show
         this.$refs.N7.hidden = true; // show
-        
       }
 
       if (this.Answer8 == "no") {
@@ -223,10 +224,9 @@ createApp({
         this.$refs.N9.hidden = false; // show
       }
 
-      if (this.Answer9 == "yes") {
+      if (this.selectedOptions2.length > 0) {
         this.$refs.Y9.hidden = false; // show
         this.$refs.N9.hidden = true; // show
-        
       }
 
       if (this.Answer10 == "no") {
@@ -237,27 +237,36 @@ createApp({
       if (this.Answer10 == "yes") {
         this.$refs.Y10.hidden = false; // show
         this.$refs.N10.hidden = true; // show
-        
       }
     },
     confeti() {
-      
-    
+      if (this.big_confeti) {
+        confetti({
+          particleCount: 500,
+          spread: 120,
+          origin: { y: 0.6 },
+        });
 
-      confetti({
-        particleCount: 500,
-        spread: 120,
-        origin: { y: 0.6 },
-      });
+        this.big_confeti = false;
+      }
+    },
+    confeti2() {
+      if (this.big_confeti2) {
+        confetti({
+          particleCount: 500,
+          spread: 120,
+          origin: { y: 0.6 },
+        });
+
+        this.big_confeti2 = false;
+      }
     },
     confeti_sm() {
-       
-
       confetti({
         particleCount: 100,
         spread: 120,
         origin: { y: 0.6 },
       });
-    }
+    },
   },
 }).mount("#app");
