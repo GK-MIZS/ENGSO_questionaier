@@ -121,15 +121,22 @@ createApp({
       }
 
       if (number == 8) {
+        // shakers
         this.$refs.battery1.classList.remove("animate__rubberBand"); // Reset animation
         void this.$refs.battery1.offsetWidth; // Trigger reflow
         this.$refs.battery1.classList.add("animate__rubberBand"); // Start animation
+        this.$refs.Q8.classList.remove("animate__rubberBand"); // Reset animation
+        void this.$refs.Q8.offsetWidth; // Trigger reflow
+        this.$refs.Q8.classList.add("animate__rubberBand"); // Start animation
       }
 
       if (number == 9) {
         this.$refs.battery2.classList.remove("animate__rubberBand"); // Reset animation
         void this.$refs.battery2.offsetWidth; // Trigger reflow
         this.$refs.battery2.classList.add("animate__rubberBand"); // Start animation
+        this.$refs.Q9.classList.remove("animate__rubberBand"); // Reset animation
+        void this.$refs.Q9.offsetWidth; // Trigger reflow
+        this.$refs.Q9.classList.add("animate__rubberBand"); // Start animation
       }
 
       if (number == 10) {

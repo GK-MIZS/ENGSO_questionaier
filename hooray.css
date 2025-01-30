@@ -1,6 +1,140 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fredoka:wght@300..700&display=swap');
+
+.right-gradient {
+    background: linear-gradient(90deg, #fa6688 0%, #f7c352 140%);
+}
+
+.left-gradient {
+    background: linear-gradient(270deg, #f893aa, #d47aeb 140%);
+    
+}
+
+.mt-10 {
+    margin-top: 6rem !important;
+}
+
+.fredoka-600 {
+    font-family: "Fredoka", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  }
+
+.barlow-thin {
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  .barlow-extralight {
+    font-family: "Barlow", serif;
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+  .barlow-light {
+    font-family: "Barlow", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .barlow-regular {
+    font-family: "Barlow", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .barlow-medium {
+    font-family: "Barlow", serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .barlow-semibold {
+    font-family: "Barlow", serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .barlow-bold {
+    font-family: "Barlow", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .barlow-extrabold {
+    font-family: "Barlow", serif;
+    font-weight: 800;
+    font-style: normal;
+  }
+  
+  .barlow-black {
+    font-family: "Barlow", serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .barlow-thin-italic {
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-style: italic;
+  }
+  
+  .barlow-extralight-italic {
+    font-family: "Barlow", serif;
+    font-weight: 200;
+    font-style: italic;
+  }
+  
+  .barlow-light-italic {
+    font-family: "Barlow", serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .barlow-regular-italic {
+    font-family: "Barlow", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .barlow-medium-italic {
+    font-family: "Barlow", serif;
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  .barlow-semibold-italic {
+    font-family: "Barlow", serif;
+    font-weight: 600;
+    font-style: italic;
+  }
+  
+  .barlow-bold-italic {
+    font-family: "Barlow", serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .barlow-extrabold-italic {
+    font-family: "Barlow", serif;
+    font-weight: 800;
+    font-style: italic;
+  }
+  
+  .barlow-black-italic {
+    font-family: "Barlow", serif;
+    font-weight: 900;
+    font-style: italic;
+  }
+  
+
 .battery {
-    width: 200px; /* Adjusted width for vertical orientation */
-    height: 400px; /* Adjusted height for vertical orientation */
+    width: 150px; /* Adjusted width for vertical orientation */
+    height: 300px; /* Adjusted height for vertical orientation */
     color: #4d4d4d;
     background-color: #fff;
     border: 18px solid #4d4d4d;
@@ -42,7 +176,7 @@
 }
 
 .answer_text {
-    font-size: 2rem;
+    font-size: 1.4rem;
 }
 
 .display-1 {
